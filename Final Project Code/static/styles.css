@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    font-size: 24px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.graph-container {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;  /* Ensures content stays centered */
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-container:hover {
+    transform: scale(1.2);  /* Slightly enlarges on hover */
+}
+
+.graph-container img {
+    width: 100%;
+    border-radius: 8px;
+}

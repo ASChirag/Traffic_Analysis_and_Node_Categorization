@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Traffic Analysis System{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <!-- Welcome Section -->
+    <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Welcome to Traffic Analysis Dashboard</h1>
+        <p class="text-gray-600">Monitor and analyze network traffic patterns in real-time</p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <div class="flex items-center">
+                <div class="p-3 rounded-full bg-green-100 text-green-500">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <h2 class="text-sm font-medium text-gray-600">Total Traffic</h2>
+                    <p class="text-lg font-semibold text-gray-900">1.2 TB</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <div class="flex items-center">
+                <div class="p-3 rounded-full bg-yellow-100 text-yellow-500">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <h2 class="text-sm font-medium text-gray-600">Anomalies Detected</h2>
+                    <p class="text-lg font-semibold text-gray-900">12</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <div class="flex items-center">
+                <div class="p-3 rounded-full bg-red-100 text-red-500">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <h2 class="text-sm font-medium text-gray-600">Active Sessions</h2>
+                    <p class="text-lg font-semibold text-gray-900">156</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traffic Analysis Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Traffic Distribution</h2>
+            <div class="h-[300px]">
+                <img src="{{ url_for('static', filename='images/protocol_usage_distribution.png') }}" 
+                     alt="Traffic Distribution" 
+                     class="w-full h-full object-contain">
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Anomaly Detection</h2>
+            <div class="h-[300px]">
+                <img src="{{ url_for('static', filename='images/anomaly_pie_chart.png') }}" 
+                     alt="Anomaly Detection" 
+                     class="w-full h-full object-contain">
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Analysis Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Traffic Volume Over Time</h2>
+            <div class="h-[300px]">
+                <img src="{{ url_for('static', filename='images/traffic_volume_over_time.png') }}" 
+                     alt="Traffic Volume Over Time" 
+                     class="w-full h-full object-contain">
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Node Category Distribution</h2>
+            <div class="h-[300px]">
+                <img src="{{ url_for('static', filename='images/node_category_distribution.png') }}" 
+                     alt="Node Category Distribution" 
+                     class="w-full h-full object-contain">
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-lg shadow-sm p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Recent Activity</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead>
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Event</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 minutes ago</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Traffic Analysis Completed</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                Normal
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5 minutes ago</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Anomaly Detection Alert</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                Warning
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10 minutes ago</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Malicious Traffic Detected</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                Critical
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

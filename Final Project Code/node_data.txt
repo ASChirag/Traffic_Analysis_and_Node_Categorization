@@ -1,0 +1,501 @@
+ip_address_range	protocol_type	packets_sent	device_type	traffic_volume	connection_frequency	node_category
+172.16.x.x	HTTP	2608	Server	61461	43	Server Node
+External	TCP	2879	Server	76418	21	Malicious Node
+192.168.x.x	TCP	1024	IoT Device	67672	23	Malicious Node
+172.16.x.x	ICMP	3056	Router	35832	80	IoT Device
+172.16.x.x	HTTP	1681	Server	32966	47	Server Node
+External	TCP	3424	Router	73545	15	Router/Switch
+192.168.x.x	ICMP	4585	IoT Device	13987	25	Server Node
+192.168.x.x	HTTP	355	IoT Device	38311	36	Normal User
+172.16.x.x	ICMP	4904	PC	32575	75	Server Node
+10.x.x.x	UDP	1938	Server	64852	51	Normal User
+172.16.x.x	TCP	2044	Router	2007	15	Normal User
+172.16.x.x	UDP	109	PC	71981	68	Router/Switch
+172.16.x.x	HTTP	2971	Server	77242	21	IoT Device
+172.16.x.x	UDP	897	PC	48517	13	Server Node
+External	UDP	1115	IoT Device	30257	86	Normal User
+192.168.x.x	HTTP	1924	Server	88272	19	Server Node
+External	ICMP	4569	PC	43207	34	IoT Device
+External	UDP	3236	PC	14281	78	IoT Device
+External	ICMP	2293	Router	62246	68	Malicious Node
+172.16.x.x	UDP	323	PC	2435	52	IoT Device
+10.x.x.x	ICMP	4258	Server	99875	27	Router/Switch
+192.168.x.x	HTTP	4025	Server	92357	29	Normal User
+10.x.x.x	UDP	4884	Router	27660	28	Malicious Node
+External	HTTP	4100	Server	6084	35	Router/Switch
+External	UDP	1733	IoT Device	83197	8	Server Node
+10.x.x.x	HTTP	2252	Server	14507	16	Normal User
+10.x.x.x	HTTP	610	Server	73595	36	IoT Device
+10.x.x.x	UDP	484	PC	84807	30	Normal User
+External	UDP	504	PC	46539	18	Server Node
+External	UDP	4713	Server	8491	2	Malicious Node
+192.168.x.x	TCP	4671	Router	51192	49	Malicious Node
+192.168.x.x	ICMP	2100	PC	81395	77	Malicious Node
+External	TCP	2856	Router	64888	4	IoT Device
+10.x.x.x	TCP	1768	Server	74609	90	Router/Switch
+10.x.x.x	HTTP	1560	Server	10077	89	Router/Switch
+192.168.x.x	UDP	3736	IoT Device	21953	94	Normal User
+External	ICMP	2824	PC	77919	75	IoT Device
+192.168.x.x	HTTP	4909	Server	68889	7	Malicious Node
+192.168.x.x	TCP	4278	IoT Device	24821	95	Malicious Node
+172.16.x.x	UDP	2148	PC	38567	74	Server Node
+172.16.x.x	HTTP	4246	Server	25860	39	Server Node
+172.16.x.x	UDP	4880	Server	22195	13	Malicious Node
+10.x.x.x	HTTP	816	PC	78475	31	Malicious Node
+External	UDP	4644	PC	91874	71	IoT Device
+External	TCP	4683	PC	88266	63	Router/Switch
+External	ICMP	1923	Server	22427	56	Server Node
+External	TCP	2181	Server	28083	42	Router/Switch
+172.16.x.x	ICMP	3519	IoT Device	88046	61	IoT Device
+10.x.x.x	UDP	1674	Router	58372	42	Malicious Node
+10.x.x.x	HTTP	349	PC	45064	56	Router/Switch
+172.16.x.x	TCP	773	Server	8813	36	Malicious Node
+10.x.x.x	ICMP	4633	Server	32598	84	Malicious Node
+172.16.x.x	TCP	2265	PC	94106	68	Normal User
+External	ICMP	870	Router	28082	7	Router/Switch
+172.16.x.x	TCP	4062	PC	30241	54	Router/Switch
+External	ICMP	4463	Router	97214	1	Malicious Node
+External	ICMP	2084	Server	45569	44	IoT Device
+192.168.x.x	UDP	1177	Router	12745	45	Normal User
+172.16.x.x	ICMP	335	IoT Device	27029	47	Malicious Node
+192.168.x.x	UDP	488	Server	14025	13	Server Node
+172.16.x.x	ICMP	3137	IoT Device	15288	22	Server Node
+172.16.x.x	HTTP	4958	PC	90186	21	Normal User
+192.168.x.x	HTTP	1948	PC	7540	86	IoT Device
+192.168.x.x	HTTP	4819	PC	98768	92	Malicious Node
+172.16.x.x	ICMP	2914	Router	82958	9	Router/Switch
+10.x.x.x	UDP	3474	Server	69878	26	Normal User
+External	UDP	3378	PC	42846	9	IoT Device
+192.168.x.x	ICMP	1352	PC	76932	15	Router/Switch
+External	HTTP	4081	Server	18482	10	Server Node
+10.x.x.x	HTTP	4773	PC	24411	88	Server Node
+10.x.x.x	UDP	2222	IoT Device	51975	42	Router/Switch
+10.x.x.x	HTTP	4630	Server	61545	72	Normal User
+192.168.x.x	TCP	2250	Server	79797	24	Server Node
+10.x.x.x	UDP	4959	Server	53307	80	Malicious Node
+192.168.x.x	HTTP	1429	IoT Device	4093	49	Router/Switch
+10.x.x.x	UDP	1458	Server	78258	26	Router/Switch
+External	TCP	2582	IoT Device	23042	91	Server Node
+External	UDP	4642	Server	53930	37	Normal User
+172.16.x.x	UDP	2117	Router	45413	68	Malicious Node
+External	UDP	1431	PC	94623	50	Normal User
+172.16.x.x	UDP	4444	Router	98883	24	IoT Device
+External	TCP	4361	PC	34756	19	IoT Device
+192.168.x.x	ICMP	1458	IoT Device	54268	60	Server Node
+External	UDP	4737	Router	40214	39	Server Node
+172.16.x.x	UDP	4954	Server	82871	74	Server Node
+172.16.x.x	HTTP	3277	PC	29602	89	IoT Device
+10.x.x.x	UDP	2228	PC	54331	18	Normal User
+192.168.x.x	HTTP	2280	Router	49901	19	Normal User
+External	ICMP	4992	IoT Device	64416	36	Server Node
+10.x.x.x	TCP	237	Router	33196	74	Malicious Node
+External	TCP	3572	IoT Device	6626	97	Normal User
+External	ICMP	2932	IoT Device	8424	55	IoT Device
+10.x.x.x	TCP	3679	PC	13857	69	Router/Switch
+10.x.x.x	ICMP	3131	Router	20982	47	Router/Switch
+10.x.x.x	ICMP	4264	Router	77961	49	Router/Switch
+10.x.x.x	ICMP	2693	IoT Device	2980	99	Malicious Node
+10.x.x.x	TCP	4400	Router	49290	98	Server Node
+External	HTTP	3918	Server	27431	33	IoT Device
+10.x.x.x	ICMP	4238	Server	85976	21	Malicious Node
+192.168.x.x	UDP	3923	Router	83711	81	IoT Device
+172.16.x.x	TCP	4142	Router	27385	22	IoT Device
+10.x.x.x	ICMP	2006	IoT Device	39158	48	Server Node
+10.x.x.x	ICMP	860	Server	24019	37	Router/Switch
+External	UDP	3545	Server	19639	15	Server Node
+10.x.x.x	HTTP	999	PC	86530	35	Malicious Node
+10.x.x.x	HTTP	4555	IoT Device	22563	92	Malicious Node
+10.x.x.x	HTTP	3047	PC	40341	71	Malicious Node
+External	ICMP	1819	Server	6776	32	Server Node
+10.x.x.x	ICMP	380	IoT Device	37444	11	IoT Device
+172.16.x.x	ICMP	3366	Router	69916	10	IoT Device
+External	TCP	1987	IoT Device	9711	73	Normal User
+172.16.x.x	UDP	3366	Router	75318	78	Malicious Node
+External	ICMP	766	Router	83970	77	IoT Device
+10.x.x.x	UDP	4288	IoT Device	86553	57	Normal User
+172.16.x.x	UDP	771	Router	31707	25	IoT Device
+External	HTTP	2069	PC	40110	2	Malicious Node
+192.168.x.x	TCP	4256	Server	62788	64	Router/Switch
+10.x.x.x	ICMP	3222	Router	83879	35	Malicious Node
+External	HTTP	4799	PC	39827	7	Server Node
+192.168.x.x	HTTP	4877	Router	6655	85	IoT Device
+External	ICMP	4000	Server	45859	18	IoT Device
+192.168.x.x	UDP	623	PC	54625	67	Server Node
+10.x.x.x	HTTP	2493	Server	53098	42	Server Node
+172.16.x.x	UDP	3217	Server	16251	39	Router/Switch
+192.168.x.x	TCP	2693	PC	1526	41	IoT Device
+External	UDP	2068	PC	69760	75	IoT Device
+10.x.x.x	TCP	1853	PC	48837	24	Router/Switch
+192.168.x.x	UDP	2396	IoT Device	12536	60	Normal User
+External	HTTP	2361	PC	29541	46	Router/Switch
+External	HTTP	2386	PC	80083	19	Malicious Node
+External	TCP	4302	PC	52027	68	IoT Device
+192.168.x.x	ICMP	2978	PC	35531	90	Server Node
+192.168.x.x	TCP	4243	Router	9712	42	Malicious Node
+192.168.x.x	TCP	3744	IoT Device	66455	32	IoT Device
+172.16.x.x	UDP	4532	Server	75744	39	Router/Switch
+192.168.x.x	UDP	2155	PC	6109	36	Malicious Node
+192.168.x.x	TCP	4820	Router	50268	97	IoT Device
+192.168.x.x	HTTP	1376	Router	55615	36	Normal User
+172.16.x.x	UDP	2866	Router	83503	3	Normal User
+192.168.x.x	ICMP	402	Server	30759	73	Server Node
+External	UDP	738	PC	86708	8	IoT Device
+192.168.x.x	UDP	155	IoT Device	61112	97	Normal User
+External	ICMP	4921	IoT Device	27589	70	Router/Switch
+External	TCP	625	Router	31015	41	IoT Device
+External	ICMP	4669	Server	30009	68	Router/Switch
+172.16.x.x	TCP	4223	Server	84309	13	Router/Switch
+172.16.x.x	TCP	2225	Server	63046	49	Normal User
+172.16.x.x	TCP	3387	IoT Device	27143	60	IoT Device
+192.168.x.x	ICMP	464	Router	7154	2	Malicious Node
+External	TCP	4721	PC	22804	60	Normal User
+172.16.x.x	HTTP	1746	IoT Device	42688	5	Normal User
+172.16.x.x	ICMP	1018	Router	65288	44	IoT Device
+192.168.x.x	HTTP	2897	Router	52195	27	IoT Device
+172.16.x.x	TCP	1631	PC	21581	32	Router/Switch
+192.168.x.x	UDP	3445	PC	53648	21	IoT Device
+10.x.x.x	TCP	2006	PC	31087	8	Router/Switch
+172.16.x.x	HTTP	3186	Server	50930	72	Normal User
+10.x.x.x	HTTP	4680	PC	33981	50	Server Node
+192.168.x.x	ICMP	2175	Router	70298	67	Malicious Node
+External	UDP	813	PC	47167	44	Normal User
+172.16.x.x	ICMP	1162	Router	76304	58	IoT Device
+192.168.x.x	HTTP	2076	IoT Device	44408	3	Malicious Node
+External	TCP	1396	Server	40499	86	Server Node
+External	UDP	225	IoT Device	53269	70	Server Node
+10.x.x.x	TCP	4732	IoT Device	39559	2	Router/Switch
+192.168.x.x	TCP	3696	Router	75319	87	Malicious Node
+External	UDP	3383	IoT Device	96317	44	Router/Switch
+172.16.x.x	ICMP	1703	Router	97347	2	Normal User
+172.16.x.x	TCP	166	PC	49787	81	Malicious Node
+10.x.x.x	HTTP	332	PC	36488	35	Normal User
+External	TCP	2256	Router	75441	98	Router/Switch
+192.168.x.x	UDP	1269	PC	75663	87	Malicious Node
+172.16.x.x	UDP	2258	Server	23431	30	Router/Switch
+External	UDP	4306	IoT Device	62681	8	Malicious Node
+External	ICMP	1593	Server	64483	22	Router/Switch
+10.x.x.x	TCP	4818	IoT Device	50153	44	Server Node
+172.16.x.x	ICMP	4107	PC	7368	58	Router/Switch
+172.16.x.x	ICMP	2572	Server	28424	36	Server Node
+192.168.x.x	UDP	2760	PC	46004	69	Router/Switch
+172.16.x.x	UDP	2839	IoT Device	84869	77	Malicious Node
+192.168.x.x	ICMP	1861	Router	89652	93	Malicious Node
+172.16.x.x	TCP	3614	Router	57985	31	Malicious Node
+10.x.x.x	HTTP	2075	Server	51069	47	IoT Device
+172.16.x.x	ICMP	2462	PC	53326	55	Normal User
+192.168.x.x	TCP	976	PC	82061	80	Malicious Node
+192.168.x.x	UDP	3912	Server	24398	62	Server Node
+10.x.x.x	UDP	3548	Router	99393	30	Malicious Node
+172.16.x.x	TCP	1412	IoT Device	51861	55	IoT Device
+172.16.x.x	HTTP	1560	Server	76897	16	Server Node
+10.x.x.x	UDP	2809	IoT Device	82905	12	IoT Device
+172.16.x.x	UDP	2424	Router	69577	17	Server Node
+172.16.x.x	UDP	1833	PC	66641	16	Router/Switch
+192.168.x.x	TCP	1705	Router	10078	12	Normal User
+172.16.x.x	ICMP	2663	Server	26003	8	Normal User
+172.16.x.x	UDP	3521	PC	63768	84	IoT Device
+10.x.x.x	ICMP	3617	Server	52047	3	Normal User
+10.x.x.x	HTTP	2497	Server	72626	16	IoT Device
+External	UDP	3835	Router	58660	30	IoT Device
+192.168.x.x	UDP	2970	Server	50786	23	IoT Device
+172.16.x.x	HTTP	1260	Router	2925	92	Normal User
+172.16.x.x	UDP	4954	PC	84976	5	IoT Device
+External	ICMP	342	Router	27015	84	Normal User
+172.16.x.x	TCP	2690	PC	34320	65	IoT Device
+192.168.x.x	ICMP	1163	Router	65881	30	Malicious Node
+External	TCP	4424	IoT Device	91827	21	IoT Device
+192.168.x.x	TCP	2695	IoT Device	27289	84	Server Node
+External	ICMP	1019	Server	4389	70	IoT Device
+External	ICMP	105	Router	26683	22	Router/Switch
+10.x.x.x	ICMP	567	Router	14629	82	IoT Device
+192.168.x.x	ICMP	4270	PC	62550	72	Server Node
+172.16.x.x	HTTP	103	Server	25826	32	Server Node
+172.16.x.x	UDP	745	Router	27630	33	Normal User
+192.168.x.x	TCP	217	Server	99762	16	Malicious Node
+172.16.x.x	ICMP	3028	IoT Device	47163	76	IoT Device
+172.16.x.x	ICMP	2651	Router	99511	38	Normal User
+192.168.x.x	ICMP	4389	Router	67435	98	Malicious Node
+External	HTTP	946	Server	12653	14	IoT Device
+192.168.x.x	ICMP	2862	Router	28961	36	Router/Switch
+External	ICMP	1241	Server	82941	97	IoT Device
+172.16.x.x	ICMP	1910	Router	75137	23	Server Node
+172.16.x.x	UDP	823	PC	34662	66	Server Node
+172.16.x.x	HTTP	324	Server	99818	85	Router/Switch
+10.x.x.x	ICMP	4727	Router	57446	2	Normal User
+External	TCP	4308	IoT Device	22288	91	Malicious Node
+10.x.x.x	TCP	4754	Router	96081	73	IoT Device
+10.x.x.x	TCP	2148	IoT Device	37877	65	Server Node
+192.168.x.x	HTTP	4849	IoT Device	16313	75	Normal User
+10.x.x.x	HTTP	4515	PC	81885	67	Router/Switch
+192.168.x.x	TCP	1673	Server	73715	52	Server Node
+192.168.x.x	ICMP	1928	Router	11326	62	Router/Switch
+10.x.x.x	HTTP	2017	PC	2560	23	IoT Device
+External	TCP	4334	Router	80148	26	Malicious Node
+External	TCP	2126	IoT Device	84186	68	Server Node
+External	ICMP	3844	Server	27745	82	Server Node
+External	UDP	1001	Router	32890	55	IoT Device
+External	HTTP	4885	Router	21022	6	Normal User
+10.x.x.x	ICMP	2139	IoT Device	53579	35	Malicious Node
+10.x.x.x	TCP	109	Router	71316	22	Server Node
+172.16.x.x	TCP	360	Router	84847	43	Malicious Node
+External	ICMP	1773	IoT Device	29380	15	Server Node
+10.x.x.x	HTTP	2319	PC	3356	86	Malicious Node
+172.16.x.x	UDP	2160	IoT Device	71326	60	Router/Switch
+External	UDP	3813	PC	93447	12	Server Node
+192.168.x.x	TCP	1719	Server	90899	49	Malicious Node
+172.16.x.x	HTTP	420	PC	21049	42	Normal User
+10.x.x.x	UDP	1442	PC	76717	38	Router/Switch
+192.168.x.x	HTTP	2476	Server	17082	82	Router/Switch
+192.168.x.x	HTTP	2932	PC	1661	45	Normal User
+192.168.x.x	TCP	2924	IoT Device	38412	35	Malicious Node
+172.16.x.x	UDP	2094	PC	3920	30	IoT Device
+10.x.x.x	ICMP	3058	Server	92194	88	Normal User
+192.168.x.x	TCP	2138	IoT Device	61315	30	Malicious Node
+External	UDP	3590	Server	80561	78	Normal User
+192.168.x.x	UDP	3777	Server	9946	6	Normal User
+192.168.x.x	UDP	1218	Router	95242	67	Server Node
+172.16.x.x	UDP	1704	Router	46500	80	Malicious Node
+172.16.x.x	UDP	4127	Server	17309	7	IoT Device
+10.x.x.x	HTTP	335	Server	56230	52	Server Node
+External	TCP	2069	Server	99656	14	Normal User
+172.16.x.x	HTTP	4529	Router	31027	73	Normal User
+192.168.x.x	ICMP	2008	Router	73541	15	Normal User
+10.x.x.x	UDP	475	PC	60321	21	Malicious Node
+192.168.x.x	TCP	3630	PC	1956	35	Malicious Node
+192.168.x.x	UDP	2735	Server	75131	66	Server Node
+172.16.x.x	TCP	1670	IoT Device	48908	91	IoT Device
+10.x.x.x	HTTP	2660	IoT Device	79339	2	Server Node
+External	TCP	3491	Router	26963	35	Router/Switch
+External	ICMP	3065	Router	40443	82	Normal User
+172.16.x.x	ICMP	3743	Router	40063	78	Normal User
+172.16.x.x	TCP	3950	Server	81818	20	Normal User
+10.x.x.x	TCP	972	IoT Device	5703	82	Server Node
+External	TCP	1352	PC	66128	10	Server Node
+External	TCP	1414	Server	73099	25	Normal User
+External	ICMP	4920	PC	26849	66	Server Node
+192.168.x.x	UDP	2998	PC	32860	25	Malicious Node
+External	TCP	177	Server	32585	54	Malicious Node
+192.168.x.x	TCP	2721	PC	23015	33	Server Node
+10.x.x.x	ICMP	4327	IoT Device	78539	36	Normal User
+192.168.x.x	ICMP	700	PC	44585	95	Server Node
+10.x.x.x	HTTP	1165	IoT Device	27958	14	Server Node
+External	TCP	2236	IoT Device	27017	65	Server Node
+External	HTTP	2549	IoT Device	77707	80	Router/Switch
+10.x.x.x	ICMP	2443	Router	46350	54	Malicious Node
+172.16.x.x	ICMP	1963	PC	13201	52	IoT Device
+10.x.x.x	UDP	1418	Server	30426	3	IoT Device
+172.16.x.x	TCP	4811	Server	18778	99	Router/Switch
+192.168.x.x	HTTP	3697	PC	46241	41	Server Node
+192.168.x.x	ICMP	3862	Router	43229	6	Router/Switch
+192.168.x.x	ICMP	4770	Router	87652	25	Router/Switch
+External	HTTP	2290	IoT Device	49364	13	Normal User
+192.168.x.x	UDP	1092	PC	99833	98	Malicious Node
+172.16.x.x	ICMP	2812	PC	85878	8	IoT Device
+192.168.x.x	TCP	2292	Server	58056	21	Server Node
+10.x.x.x	ICMP	1348	PC	28490	98	IoT Device
+10.x.x.x	TCP	3154	Router	20975	68	IoT Device
+External	HTTP	4698	PC	27723	25	Malicious Node
+10.x.x.x	TCP	4133	Server	24279	79	IoT Device
+172.16.x.x	HTTP	2097	IoT Device	79301	68	IoT Device
+192.168.x.x	TCP	3787	Server	12561	45	Router/Switch
+External	HTTP	2251	Server	67061	60	Malicious Node
+192.168.x.x	TCP	4118	IoT Device	89397	12	Normal User
+192.168.x.x	UDP	3210	Server	50153	32	Server Node
+172.16.x.x	TCP	2070	Server	34142	96	IoT Device
+10.x.x.x	TCP	297	PC	27916	92	Server Node
+10.x.x.x	UDP	2726	PC	65324	13	Normal User
+192.168.x.x	ICMP	1302	IoT Device	45965	31	Server Node
+External	ICMP	2135	PC	5648	78	Normal User
+10.x.x.x	TCP	577	PC	36133	20	Router/Switch
+External	UDP	1354	Server	51677	18	IoT Device
+10.x.x.x	TCP	1022	Router	97059	93	Normal User
+External	HTTP	519	PC	95588	60	Server Node
+172.16.x.x	HTTP	2304	Router	99317	63	IoT Device
+External	TCP	2697	PC	71135	6	Router/Switch
+172.16.x.x	ICMP	1220	PC	36046	32	IoT Device
+172.16.x.x	ICMP	3168	IoT Device	48064	93	Normal User
+External	TCP	1050	IoT Device	70350	43	Router/Switch
+172.16.x.x	TCP	2436	IoT Device	46893	2	Server Node
+192.168.x.x	HTTP	2343	Router	62272	60	Router/Switch
+172.16.x.x	ICMP	2745	Server	93152	23	Router/Switch
+10.x.x.x	TCP	1957	PC	68649	83	Malicious Node
+External	HTTP	4712	PC	65674	31	Router/Switch
+192.168.x.x	ICMP	1965	PC	14760	5	Router/Switch
+External	UDP	3012	Router	22927	83	IoT Device
+10.x.x.x	HTTP	2953	IoT Device	87475	34	Server Node
+10.x.x.x	ICMP	3328	Server	62367	10	IoT Device
+10.x.x.x	ICMP	3819	Router	98955	89	IoT Device
+172.16.x.x	HTTP	3328	IoT Device	13588	2	Normal User
+172.16.x.x	UDP	2471	Router	53233	11	IoT Device
+External	HTTP	2991	Server	45738	50	Malicious Node
+External	ICMP	3856	IoT Device	34397	31	Malicious Node
+192.168.x.x	TCP	4325	Router	83189	56	Normal User
+192.168.x.x	TCP	194	Server	77367	79	Server Node
+External	HTTP	2774	PC	72260	73	Server Node
+172.16.x.x	ICMP	2055	Server	77619	87	IoT Device
+10.x.x.x	TCP	893	PC	20816	83	IoT Device
+External	ICMP	1934	Router	43240	9	IoT Device
+192.168.x.x	HTTP	2216	IoT Device	7276	99	Server Node
+172.16.x.x	TCP	4206	IoT Device	80530	21	Router/Switch
+External	ICMP	3425	Router	24499	73	Malicious Node
+External	TCP	3019	IoT Device	89576	28	Router/Switch
+172.16.x.x	HTTP	2697	IoT Device	83495	62	Router/Switch
+External	ICMP	3305	PC	72635	7	Server Node
+172.16.x.x	TCP	4907	Router	86112	80	Router/Switch
+10.x.x.x	HTTP	914	Server	36946	16	Normal User
+172.16.x.x	TCP	445	PC	56204	97	IoT Device
+172.16.x.x	TCP	2449	Router	52886	4	Normal User
+172.16.x.x	UDP	462	PC	72652	4	Malicious Node
+External	UDP	2543	Server	16563	40	IoT Device
+External	HTTP	2365	Server	93324	17	Router/Switch
+172.16.x.x	UDP	2288	Router	93464	52	Malicious Node
+External	HTTP	3105	Server	10847	93	IoT Device
+192.168.x.x	UDP	3381	PC	27155	52	Router/Switch
+192.168.x.x	TCP	1084	Server	80671	36	Normal User
+External	HTTP	1739	PC	84310	38	IoT Device
+External	HTTP	927	PC	68278	50	Router/Switch
+172.16.x.x	TCP	2830	Server	19309	63	Normal User
+10.x.x.x	HTTP	3631	Router	1619	63	Malicious Node
+External	HTTP	4551	IoT Device	84194	62	Malicious Node
+192.168.x.x	UDP	3035	Server	51108	99	Malicious Node
+172.16.x.x	HTTP	3976	PC	35707	7	Malicious Node
+External	ICMP	226	PC	21337	27	Server Node
+192.168.x.x	TCP	3277	Server	82537	92	IoT Device
+192.168.x.x	UDP	3156	Router	67504	86	IoT Device
+10.x.x.x	UDP	703	Router	48614	14	Server Node
+172.16.x.x	ICMP	3549	PC	92428	71	Router/Switch
+172.16.x.x	TCP	4246	PC	92155	86	Router/Switch
+10.x.x.x	TCP	3633	Router	1281	5	Malicious Node
+10.x.x.x	UDP	3467	IoT Device	28420	55	Normal User
+172.16.x.x	HTTP	3468	Server	81896	2	Router/Switch
+172.16.x.x	UDP	3897	PC	40030	62	Normal User
+External	TCP	1892	PC	2058	91	IoT Device
+External	ICMP	2961	Router	87213	21	Normal User
+10.x.x.x	UDP	3576	Server	77260	79	IoT Device
+External	TCP	3517	Router	29404	21	Server Node
+192.168.x.x	UDP	1745	Server	30856	10	Server Node
+External	HTTP	1305	Server	10200	87	Malicious Node
+External	UDP	3130	Server	65178	58	Router/Switch
+192.168.x.x	UDP	2972	PC	34997	39	Malicious Node
+10.x.x.x	TCP	3172	IoT Device	26611	5	IoT Device
+192.168.x.x	TCP	1954	Router	42235	65	Malicious Node
+External	TCP	4121	IoT Device	36057	13	Normal User
+10.x.x.x	UDP	4762	Router	2239	85	IoT Device
+External	HTTP	2808	Server	66661	90	Server Node
+192.168.x.x	ICMP	3602	PC	46272	85	Router/Switch
+192.168.x.x	ICMP	1432	IoT Device	90393	53	IoT Device
+External	TCP	301	PC	62212	82	IoT Device
+172.16.x.x	TCP	3607	Router	16398	45	Normal User
+172.16.x.x	UDP	4312	PC	57503	32	Router/Switch
+192.168.x.x	ICMP	674	PC	7638	36	Server Node
+192.168.x.x	TCP	636	IoT Device	7570	81	IoT Device
+172.16.x.x	HTTP	1725	Server	69785	99	IoT Device
+172.16.x.x	HTTP	2222	PC	10110	60	Normal User
+External	TCP	485	Server	80141	11	Malicious Node
+External	TCP	3381	Router	13115	63	Server Node
+172.16.x.x	ICMP	574	PC	40062	21	Router/Switch
+External	ICMP	517	IoT Device	23911	52	IoT Device
+External	UDP	3700	Router	33556	55	IoT Device
+10.x.x.x	ICMP	1054	Router	79131	26	Server Node
+External	HTTP	4958	IoT Device	2969	68	Malicious Node
+192.168.x.x	HTTP	1305	PC	44753	34	IoT Device
+External	TCP	4859	PC	83811	52	Server Node
+External	ICMP	4220	Router	5470	82	Normal User
+172.16.x.x	UDP	2090	PC	11225	99	Malicious Node
+192.168.x.x	HTTP	4905	Server	24196	93	Router/Switch
+External	HTTP	3672	IoT Device	14669	52	IoT Device
+External	UDP	4480	Server	38380	29	Server Node
+10.x.x.x	UDP	4258	PC	49320	38	Normal User
+External	HTTP	4857	Router	48414	42	Router/Switch
+External	HTTP	2813	IoT Device	16577	21	Server Node
+10.x.x.x	UDP	2303	PC	89009	42	Server Node
+172.16.x.x	HTTP	3220	PC	56409	13	Router/Switch
+External	TCP	1066	Router	29625	64	Normal User
+10.x.x.x	TCP	3532	Router	82040	17	Normal User
+192.168.x.x	UDP	788	Server	25089	9	Malicious Node
+172.16.x.x	ICMP	4343	IoT Device	37487	41	IoT Device
+192.168.x.x	UDP	3801	IoT Device	66838	1	Router/Switch
+192.168.x.x	UDP	441	Router	97999	2	Router/Switch
+10.x.x.x	ICMP	1824	Server	95795	60	Router/Switch
+External	ICMP	4522	IoT Device	51138	48	Normal User
+10.x.x.x	ICMP	1892	Router	43823	29	IoT Device
+10.x.x.x	TCP	1859	PC	38208	97	Malicious Node
+10.x.x.x	HTTP	3312	IoT Device	55061	10	Server Node
+10.x.x.x	TCP	1089	Server	31659	58	Server Node
+172.16.x.x	HTTP	2362	Server	32890	60	Router/Switch
+External	TCP	2582	Server	80134	21	IoT Device
+192.168.x.x	HTTP	1051	PC	48055	28	Normal User
+192.168.x.x	TCP	822	IoT Device	20508	75	IoT Device
+External	ICMP	3489	IoT Device	43287	34	IoT Device
+192.168.x.x	UDP	2179	PC	79916	8	Normal User
+External	TCP	2817	IoT Device	27984	59	Router/Switch
+192.168.x.x	HTTP	2432	PC	9125	86	IoT Device
+10.x.x.x	ICMP	3476	PC	37059	72	Server Node
+192.168.x.x	TCP	4624	PC	70569	49	Normal User
+External	TCP	1600	Server	18087	79	Malicious Node
+External	ICMP	385	IoT Device	6704	17	Router/Switch
+External	TCP	3595	PC	61576	60	Normal User
+External	UDP	2165	IoT Device	74384	87	Malicious Node
+External	TCP	868	Server	88128	88	Malicious Node
+172.16.x.x	UDP	3157	PC	73460	45	IoT Device
+172.16.x.x	UDP	4389	Router	28208	83	IoT Device
+192.168.x.x	ICMP	2261	Server	86150	69	IoT Device
+External	TCP	3393	Router	67024	32	Normal User
+192.168.x.x	ICMP	1046	IoT Device	40882	44	Normal User
+External	TCP	3435	IoT Device	26923	65	Router/Switch
+External	TCP	4250	Server	30165	87	IoT Device
+172.16.x.x	HTTP	4995	IoT Device	68203	8	Malicious Node
+172.16.x.x	TCP	4973	Router	92749	77	Server Node
+10.x.x.x	ICMP	1581	PC	5114	72	Router/Switch
+172.16.x.x	UDP	2001	PC	65965	87	Normal User
+10.x.x.x	TCP	3551	PC	37321	43	Router/Switch
+10.x.x.x	HTTP	4164	Server	74297	1	Router/Switch
+10.x.x.x	ICMP	154	IoT Device	97652	51	Router/Switch
+10.x.x.x	TCP	1923	Router	26426	24	Router/Switch
+10.x.x.x	ICMP	3562	IoT Device	18772	99	Server Node
+192.168.x.x	HTTP	3179	IoT Device	4712	24	IoT Device
+172.16.x.x	HTTP	932	IoT Device	2367	17	Malicious Node
+10.x.x.x	ICMP	4508	PC	92736	5	Router/Switch
+External	TCP	2906	Router	52924	20	Router/Switch
+172.16.x.x	UDP	2590	Router	4726	21	Router/Switch
+172.16.x.x	HTTP	427	IoT Device	90152	58	IoT Device
+10.x.x.x	TCP	3410	PC	28723	31	Normal User
+192.168.x.x	TCP	3400	PC	10108	11	Normal User
+10.x.x.x	UDP	3775	Router	78714	52	Server Node
+192.168.x.x	HTTP	3154	PC	36643	15	Normal User
+External	HTTP	2243	PC	32324	83	Router/Switch
+172.16.x.x	TCP	1411	PC	84360	7	Router/Switch
+External	TCP	3291	Server	9927	28	Router/Switch
+192.168.x.x	UDP	2638	IoT Device	94680	51	Server Node
+192.168.x.x	UDP	4083	Router	97546	58	Router/Switch
+External	HTTP	4647	Router	23443	5	Normal User
+192.168.x.x	ICMP	264	Server	80973	5	IoT Device
+External	HTTP	4377	IoT Device	64449	94	IoT Device
+172.16.x.x	TCP	922	Router	77743	96	Malicious Node
+External	HTTP	1043	PC	61233	8	Normal User
+172.16.x.x	ICMP	4525	Router	26537	64	Router/Switch
+External	UDP	874	PC	78576	10	IoT Device
+192.168.x.x	ICMP	2298	Server	23612	38	Normal User
+External	ICMP	3256	PC	94977	96	IoT Device
+192.168.x.x	ICMP	4342	Router	7471	92	Router/Switch
+External	UDP	3795	Router	36631	81	IoT Device
+External	ICMP	3552	Router	93059	95	Malicious Node
+10.x.x.x	ICMP	1014	Server	32348	8	Malicious Node
+192.168.x.x	ICMP	1408	Server	65732	25	IoT Device
+10.x.x.x	TCP	4277	IoT Device	2177	73	Normal User
+192.168.x.x	ICMP	613	Router	5760	66	Normal User
+10.x.x.x	UDP	2020	PC	33779	79	Normal User
+172.16.x.x	ICMP	3694	Server	22636	50	IoT Device
+External	ICMP	4941	Router	82889	67	Normal User
+192.168.x.x	UDP	1509	Router	54551	49	Router/Switch
+192.168.x.x	ICMP	4902	Server	12556	36	Malicious Node
+External	UDP	4666	IoT Device	28598	68	Router/Switch
+192.168.x.x	ICMP	3290	Server	12563	78	Normal User
+192.168.x.x	UDP	4591	Server	47819	41	Router/Switch
+10.x.x.x	ICMP	1655	PC	74770	89	Normal User
+192.168.x.x	ICMP	904	PC	92055	62	IoT Device
+172.16.x.x	TCP	1379	IoT Device	27966	10	Router/Switch
+172.16.x.x	TCP	3677	Router	82709	21	IoT Device
+External	ICMP	3001	Server	60889	36	IoT Device
+192.168.x.x	ICMP	1487	IoT Device	27987	12	Server Node
+External	HTTP	4788	PC	79714	91	Normal User

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}About - Traffic Analysis System{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">About Traffic Analysis System</h1>
+        <p class="text-xl text-gray-600 mb-12">Advanced network traffic analysis and anomaly detection using machine learning</p>
+</div>
+
+    <div class="space-y-12">
+        <!-- Mission Section -->
+        <div class="bg-white rounded-lg shadow-sm p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
+            <p class="text-gray-600 leading-relaxed">
+                To provide a robust and efficient solution for analyzing network traffic patterns and detecting potential security threats using cutting-edge machine learning techniques.
+            </p>
+</div>
+
+        <!-- Features Section -->
+        <div class="bg-white rounded-lg shadow-sm p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <svg class="h-6 w-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-medium text-gray-900">Real-time Analysis</h3>
+                        <p class="mt-1 text-gray-600">Monitor network traffic patterns in real-time with advanced analytics.</p>
+            </div>
+        </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <svg class="h-6 w-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-medium text-gray-900">ML-Powered Detection</h3>
+                        <p class="mt-1 text-gray-600">Utilize machine learning algorithms for accurate anomaly detection.</p>
+            </div>
+        </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <svg class="h-6 w-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-medium text-gray-900">Detailed Reports</h3>
+                        <p class="mt-1 text-gray-600">Generate comprehensive reports with actionable insights.</p>
+            </div>
+        </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <svg class="h-6 w-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-medium text-gray-900">Secure Platform</h3>
+                        <p class="mt-1 text-gray-600">Enterprise-grade security with encrypted data transmission.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Team Section -->
+        <div class="bg-white rounded-lg shadow-sm p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="{{ url_for('static', filename='images/chirag.jpg') }}" alt="Chirag" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">A S Chirag</h3>
+                    <p class="text-gray-600">ML Engineer</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="{{ url_for('static', filename='images/nipun.jpg') }}" alt="Nipun" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Nipun Adarsh</h3>
+                    <p class="text-gray-600">Full-Stack Developer</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="{{ url_for('static', filename='images/sethu.jpg') }}" alt="Sethupathi" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Sethupathi M</h3>
+                    <p class="text-gray-600">Designer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
