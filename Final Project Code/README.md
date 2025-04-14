@@ -2,8 +2,6 @@
 
 A Flask-based web application for analyzing network traffic, detecting anomalies, and categorizing network nodes using machine learning models.
 
-A project made by Chirag, Nipun and Sethu
-
 ## Features
 
 - Traffic Analysis: Classify network traffic as normal or malicious
