@@ -1,457 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic Analysis and Node Categorization</title>
-    <!-- ✅ Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- ✅ Google Fonts (Poppins & Montserrat) -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
-        /* ✅ Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+{% block title %}Home - Traffic Analysis System{% endblock %}
 
-/* ✅ Global Styles */
-body {
-    background: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
-    min-height: 100vh;
-    overflow-y: auto;
-}
+{% block content %}
 
-/* ✅ General Button Styling */
-.btn-custom {
-    font-family: 'Montserrat', sans-serif;
-    padding: 12px 24px;
-    border: 2px solid black;
-    color: black;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 9999px;
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: auto;
-    min-width: 200px;
-    height: 50px;
-    white-space: nowrap;
-    padding-right: 30px;
-}
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <!-- Title Section -->
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                            <span class="block">Traffic Analysis and Node Categorization:</span>
+                            <span class="block text-indigo-600 dark:text-indigo-400">Aware Machine Learning Integrated Framework</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-600 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Leverage the power of machine learning to analyze and predict traffic patterns. 
+                            Make data-driven decisions for better traffic management.
+                        </p>
+                    </div>
+                    
+                    <!-- Main Action Buttons -->
+                    <div class="mt-10 flex flex-col items-center space-y-6">
+                        <!-- First Row -->
+                        <div class="flex space-x-8">
+                            <!-- Dashboard Button -->
+                            <a href="{{ url_for('main.dashboard') }}" 
+                               class="group relative flex items-center justify-center px-12 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 hover:shadow-lg w-64">
+                                <span>Dashboard</span>
+                                <svg class="ml-2 h-5 w-5 opacity-0 group-hover:opacity-100 transform transition-all duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
 
-/* ✅ Button Hover Effects */
-.btn-custom:hover {
-    background-color: black;
-    color: white;
-    transform: translateY(-2px);
-}
+                            <!-- Testing Button -->
+                            <a href="{{ url_for('main.input_data') }}" 
+                               class="group relative flex items-center justify-center px-12 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 hover:shadow-lg w-64">
+                                <span>Testing</span>
+                                <svg class="ml-2 h-5 w-5 opacity-0 group-hover:opacity-100 transform transition-all duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
+                        </div>
 
-/* ✅ Arrow Style */
-.btn-custom .arrow {
-    margin-left: 8px;
-    opacity: 0;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.1s ease-in-out;
-}
+                        <!-- Second Row -->
+                        <div class="flex space-x-8">
+                            <!-- Model Report Button -->
+                            <a href="{{ url_for('main.model_report') }}" 
+                               class="group relative flex items-center justify-center px-12 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 mrg-left hover:shadow-lg w-64">
+                                <span>Model Report</span>
+                                <svg class="ml-2 h-5 w-5 opacity-0 group-hover:opacity-100 transform transition-all duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
 
-/* ✅ Arrow Appears on Hover */
-.btn-custom:hover .arrow {
-    opacity: 1;
-    right: 10px;
-}
-
-/* ✅ Button Section Layout */
-.btn-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin-top: 30px;
-}
-
-/* ✅ Mobile Responsiveness for Buttons */
-@media (max-width: 768px) {
-    .btn-section {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .btn-custom {
-        width: 100%;
-        padding-right: 20px;
-    }
-}
-
-/* ✅ Menu Icon */
-.menu-icon {
-    font-size: 30px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 50;
-    color: black;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-/* ✅ Active Menu Icon (X) */
-.menu-icon.open {
-    color: white;
-    transform: rotate(45deg); /* ✅ Rotates to form X */
-}
-
-/* ✅ Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #1a1a1a;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
-    z-index: 40;
-}
-
-/* ✅ Sidebar Open State */
-.sidebar.open {
-    right: 0;
-}
-
-/* ✅ Sidebar Links */
-.sidebar-link {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    border-bottom: 1px solid #333;
-    transition: background-color 0.2s ease-in-out;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-}
-
-/* ✅ Sidebar Link Hover */
-.sidebar-link:hover {
-    background-color: #444;
-}
-
-/* ✅ Sidebar Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 30;
-    display: none;
-}
-
-/* ✅ Show Overlay When Sidebar is Open */
-.sidebar.open + .overlay {
-    display: block;
-}
-
-/* ✅ Page Title Styling */
-.title-custom {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-top: 110px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-/* ✅ Real-Time Case Section Centering */
-.cases-container {
-    width: 100%;
-    max-width: 900px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-/* ✅ Center Cases Title */
-.cases-container h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    left: 400px;
-}
-
-/* ✅ Card Section Layout */
-.card-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ✅ Card Styling */
-.card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: left;
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-    max-width: 380px;
-}
-
-/* ✅ Card Hover Effect - Smooth Zoom */
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* ✅ Card Title and Description */
-.card-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.card-desc {
-    font-size: 16px;
-    color: #555;
-}
-
-/* ✅ Mobile Responsiveness for Cards */
-@media (max-width: 768px) {
-    .card-section {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .card {
-        width: 100%;
-    }
-    .cases-container h2 {
-        font-size: 24px;
-        margin-top: 20px;
-    }
-}
-
-/* ✅ Button Position Customization */
-.custom-btn-2 {
-    position: relative;
-    left: 50px;
-}
-
-.custom-btn-3 {
-    position: relative;
-    left: 100px;
-}
-
-.custom-btn-4 {
-    position: relative;
-    left: 200px;
-}
-
-/* ✅ Card Position Customization */
-.card-2 {
-    position: relative;
-    bottom: 172.5px;
-    left: 400px;
-}
-
-.card-3 {
-    position: relative;
-    bottom: 362.5px;
-    left: 800px;
-}
-
-/* ✅ Animation for Card Appearance */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ✅ Card Animation on Scroll */
-.card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* ✅ Show Card on Scroll */
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ✅ Default Hidden State for Animations */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* ✅ Show Animation on Scroll */
-.animate-on-scroll.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.menu-icon.open {
-    color: white !important;
-    transform: rotate(90deg); /* ✅ Rotates to form X */
-}
-
-.title-image img{
-    position: absolute;
-    top: 87px;
-    left: 820px;
-    width: 430px !important;
-}
-    </style>
-</head>
-
-<body class="bg-gradient-to-br from-gray-100 via-white to-gray-300 min-h-screen flex items-start justify-start">
-
-    <!-- ✅ Menu Icon (Top Right Corner) -->
-    <div class="menu-icon" id="menuIcon" onclick="toggleSidebar()">☰</div>
-
-    <!-- ✅ Sidebar Menu -->
-    <div id="sidebar" class="sidebar">
-        <a href="{{ url_for('main.home') }}" class="sidebar-link">Home</a>
-        <a href="{{ url_for('main.model_report') }}" class="sidebar-link">Model Report</a>
-        <a href="{{ url_for('main.input_data') }}" class="sidebar-link">Testing</a>
-        <button id="realCasesBtn" class="sidebar-link" onclick="scrollToCases(event)">Real-Time Cases</button>
-        <a href="{{ url_for('main.dashboard') }}" class="sidebar-link">Dashboard</a>
-        <a href="{{ url_for('main.logout') }}" class="sidebar-link">Logout</a>
+                            <!-- Real-time Cases Button -->
+                            <button onclick="smoothScroll('real-time-cases')" 
+                                    class="group relative flex items-center justify-center px-12 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 hover:shadow-lg w-64">
+                                <span>Real-time Cases</span>
+                                <svg class="ml-2 h-5 w-5 opacity-0 group-hover:opacity-100 transform transition-all duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
     </div>
 
-    <!-- ✅ Main Content Container -->
-    <div class="flex flex-col items-start justify-center w-3/4 max-w-xl ml-12 md:ml-24">
-        <!-- ✅ Title Section -->
-        <div class="flex items-center justify-between w-full mt-10">
-            <!-- Title Section (Left) -->
-            <h1 class="text-5xl font-bold text-gray-800 leading-tight title-custom animate-on-scroll">
-                Traffic Analysis and Node Categorization: Aware Machine Learning Integrated Framework
-            </h1>
-        
-            <!-- ✅ Image Section (Right) -->
-        </div>
-        <div class="title-image">
-            <img src="{{ url_for('static', filename='images/download.png') }}" 
-                alt="Traffic Analysis" 
-        </div>
+    <!-- Real-time Cases Section -->
+    <div id="real-time-cases" class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">Real-time Analysis</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                    Live Traffic Cases
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 lg:mx-auto">
+                    Monitor and analyze real-time traffic patterns and anomalies.
+                </p>
+            </div>
 
-        <!-- ✅ Button Section with Staggered Layout -->
-        <div class="btn-section mt-8">
-            <a href="{{ url_for('main.model_report') }}" class="btn-custom custom-btn-1">Model Report <span class="arrow">→</span></a>
-            <a href="{{ url_for('main.input_data') }}" class="btn-custom custom-btn-2">Testing <span class="arrow">→</span></a>
-            <a href="#" class="btn-custom custom-btn-3" onclick="scrollToCases(event)">Real-Time Cases <span class="arrow">→</span></a>
-            <a href="{{ url_for('main.dashboard') }}" class="btn-custom custom-btn-4">Dashboard <span class="arrow">→</span></a>
-        </div>
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <!-- Case 1 -->
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white shadow-lg">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Traffic Volume Spike</h3>
+                            <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+                                Unusual increase in network traffic detected. Potential DDoS attack in progress.
+                            </p>
+                        </div>
+                    </div>
 
-        <!-- ✅ Real-Time Cases Section (Centered) -->
-        <div id="cases-section" class="cases-container animate-on-scroll mt-20">
-            <h2 class="text-5xl font-bold text-gray-800 leading-tight title-custom animate-on-scroll">
-                Real-Time Cases
-            </h2>
+                    <!-- Case 2 -->
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white shadow-lg">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Connection Anomaly</h3>
+                            <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+                                Multiple failed connection attempts detected from suspicious IP addresses.
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="card-section mt-6">
-                <!-- Card 1 -->
-                <div class="card card-1 animate-on-scroll">
-                    <h3 class="card-title">Mirai IoT Botnet Case</h3>
-                    <p class="card-desc">The Mirai botnet infected IoT devices and caused widespread DDoS attacks, exploiting weak security protocols.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="card card-2 animate-on-scroll">
-                    <h3 class="card-title">Facebook Data Leak 2021</h3>
-                    <p class="card-desc">In 2021, a large data breach exposed over 530 million Facebook users' information, highlighting vulnerabilities in API endpoints.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="card card-3 animate-on-scroll">
-                    <h3 class="card-title">Ukraine Cyber War 2022-2024</h3>
-                    <p class="card-desc">During the Ukraine conflict, cyberattacks were used to disrupt communications and infrastructure, underscoring the importance of cybersecurity.</p>
+                    <!-- Case 3 -->
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white shadow-lg">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Protocol Anomaly</h3>
+                            <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+                                Unusual protocol usage patterns detected. Potential security breach attempt.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Case 4 -->
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white shadow-lg">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                            </svg>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Data Transfer Anomaly</h3>
+                            <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+                                Unusual data transfer patterns detected. Potential data exfiltration attempt.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ✅ Custom Script -->
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <script>
-        // ✅ Select all animated elements
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
-        // ✅ Intersection Observer Setup
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                } else {
-                    entry.target.classList.remove('show'); // ✅ Reset animation on scroll
-                }
-            });
-        }, {
-            threshold: 0.2, // Trigger when 20% of element is visible
-        });
-
-        // ✅ Observe each element
-        animatedElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // ✅ Smooth Scroll to Real-Time Cases Section
-        function scrollToCases(event) {
-            event.preventDefault(); // ✅ Prevent default anchor behavior
-            const casesSection = document.getElementById('cases-section');
-            const offsetTop = casesSection.getBoundingClientRect().top + window.scrollY;
-
-            // ✅ Smooth Scroll to Target Section
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-
-        // ✅ Toggle Sidebar and Menu Icon
-        function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const menuIcon = document.getElementById('menuIcon');
-    
-    sidebar.classList.toggle('open');
-    menuIcon.classList.toggle('open');
-
-    // ✅ Inline Style to Force Color Change
-    if (menuIcon.classList.contains('open')) {
-        menuIcon.style.color = '#fff'; // White when open
-    } else {
-        menuIcon.style.color = '#000'; // Black when closed
+<script>
+function smoothScroll(targetId) {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
     }
 }
-    </script>
-</body>
-
-</html> 
+</script>
+{% endblock %} 

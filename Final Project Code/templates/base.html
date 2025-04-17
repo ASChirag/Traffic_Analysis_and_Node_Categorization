@@ -23,6 +23,48 @@
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
     
     {% block extra_css %}{% endblock %}
+    <style>
+        .title-background {
+            background-color: transparent !important; 
+        }
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .hamburger {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .hamburger .line1,
+        .hamburger .line2,
+        .hamburger .line3 {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+        .hamburger.active {
+            transform: rotate(180deg);
+        }
+        .hamburger.active .line1 {
+            transform: translateY(6px) rotate(45deg);
+        }
+        .hamburger.active .line2 {
+            opacity: 0;
+            transform: scale(0);
+        }
+        .hamburger.active .line3 {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+        .hamburger.active:hover {
+            transform: rotate(180deg) scale(1.1);
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-br from-gray-100 via-white to-gray-300 min-h-screen">
     <!-- Particle Background -->
@@ -81,17 +123,69 @@
                     </a>
                     {% endif %}
                 </div>
-                <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Menu Button -->
+    <div class="fixed top-20 right-4 z-50">
+        <button type="button" id="mobile-menu-button" class="hamburger inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 bg-white/80 backdrop-blur-lg shadow-lg">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path class="line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+                <path class="line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+                <path class="line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white/95 backdrop-blur-lg shadow-lg z-40">
+        <div class="pt-16 px-4">
+            <div class="flex flex-col space-y-4">
+                {% if 'user' in session %}
+                <a href="{{ url_for('main.home') }}" 
+                   class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium">
+                    Home
+                </a>
+                <a href="{{ url_for('main.dashboard') }}"
+                   class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium">
+                    Dashboard
+                </a>
+                <a href="{{ url_for('main.input_data') }}"
+                   class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium">
+                    Input Data
+                </a>
+                <a href="{{ url_for('main.model_report') }}"
+                   class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium">
+                    Model Report
+                </a>
+                {% endif %}
+                <a href="{{ url_for('main.about') }}"
+                   class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium">
+                    About
+                </a>
+                <a href="{{ url_for('main.contact') }}"
+                   class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium">
+                    Contact
+                </a>
+                {% if 'user' in session %}
+                <div class="pt-4 border-t border-gray-200">
+                    <span class="text-gray-700 px-3 py-2 block">Welcome, {{ session['user'] }}</span>
+                    <a href="{{ url_for('main.logout') }}" 
+                       class="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        Logout
+                    </a>
+                </div>
+                {% else %}
+                <a href="{{ url_for('main.login') }}" 
+                   class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Login
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -161,6 +255,25 @@
     <!-- Custom JavaScript -->
     <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
     <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenuButton.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
     
     {% block extra_js %}{% endblock %}
 </body>

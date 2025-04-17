@@ -9,6 +9,10 @@ body {
     overflow-y: auto;
 }
 
+.mrg-left {
+    margin-left: 250px !important;
+}
+
 /* ✅ General Button Styling */
 .btn-custom {
     font-family: 'Montserrat', sans-serif;
