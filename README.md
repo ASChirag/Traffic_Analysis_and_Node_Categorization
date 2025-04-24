@@ -6,6 +6,6 @@ Guide by A.S Chirag -
 
 To Run the project, 
 
-Step - 1 - Clone the repository to your folder
-Step - 2 - Change directory('cd') into the repository folder
-Step - 3 - After changing the directory, Run 'python app.py'
+# Step - 1 - Clone the repository to your folder
+# Step - 2 - Change directory('cd') into the repository folder
+# Step - 3 - After changing the directory, Run 'python app.py'
