@@ -294,13 +294,13 @@ async function handleFormSubmit(event) {
                 </div>`;
         }
         
-        if (data.node_category) {
-            resultHTML += `
-                <div class="mb-4">
-                    <p class="font-medium">Node Category: <span class="text-green-600">${data.node_category}</span></p>
-                    <p class="font-medium">Behavior Pattern: <span class="text-green-600">${data.behavior_pattern}</span></p>
-                </div>`;
-        }
+        // if (data.node_category) {
+        //     resultHTML += `
+        //         <div class="mb-4">
+        //             <p class="font-medium">Node Category: <span class="text-green-600">${data.node_category}</span></p>
+        //             <p class="font-medium">Behavior Pattern: <span class="text-green-600">${data.behavior_pattern}</span></p>
+        //         </div>`;
+        // }
         
         if (data.anomaly_status) {
             resultHTML += `

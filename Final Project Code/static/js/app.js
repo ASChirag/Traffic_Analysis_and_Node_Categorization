@@ -22,8 +22,9 @@ animatedElements.forEach(element => {
 // ✅ Smooth Scroll to Real-Time Cases Section
 function scrollToCases(event) {
     event.preventDefault(); // ✅ Prevent default anchor behavior
-    const casesSection = document.getElementById('cases-section');
-    const offsetTop = casesSection.getBoundingClientRect().top + window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight;
+    const offsetTop = window.scrollY; // 200px above current scroll position
+
 
     // ✅ Smooth Scroll to Target Section
     window.scrollTo({
@@ -46,4 +47,4 @@ function toggleSidebar() {
     } else {
         menuIcon.style.color = '#000'; // Black when closed
     }
-} 
+}

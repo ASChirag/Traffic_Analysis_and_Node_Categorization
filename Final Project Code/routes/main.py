@@ -20,6 +20,20 @@ users = {
     'admin': {
         'password': 'admin123',  # In production, use hashed passwords
         'role': 'admin'
+    },
+    'Chirag' : {
+        'password':'Chirag123',
+        'role' : 'admin' 
+    },
+
+    'Nipun' : {
+        'password':'Nipun123',
+        'role' : 'admin',
+    },
+
+    'Sethu' : {
+        'password':'Sethu123',
+        'role' : 'admin',
     }
 }
 

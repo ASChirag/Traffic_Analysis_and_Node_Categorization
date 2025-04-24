@@ -93,7 +93,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Packets Sent</label>
-                            <input type="number" name="packets_sent" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            <input id="packets_sent" type="number" name="packets_sent" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Device Type</label>
@@ -108,7 +108,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Traffic Volume</label>
-                            <input type="number" name="traffic_volume" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            <input id="traffic_volume" type="number" name="traffic_volume" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Connection Frequency</label>
@@ -256,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div>
                                 <p class="text-lg font-medium">Classification: <span class="${isNormal ? 'text-green-600' : 'text-red-600'} font-bold">${data.traffic_classification}</span></p>
-                                <p class="text-gray-600">Risk Level: <span class="font-medium">${data.risk_level}</span></p>
                                 <p class="mt-2 text-sm text-gray-500">${isNormal ? 
                                     'The analyzed traffic pattern appears to be normal with no signs of malicious activity.' : 
                                     'The analyzed traffic pattern shows signs of potentially malicious activity that should be investigated.'}</p>
@@ -265,49 +264,91 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 if (formType === 'node') {
-                    const categoryColors = {
-                        'Server': 'blue',
-                        'Router': 'purple',
-                        'Switch': 'indigo',
-                        'IoT Device': 'green',
-                        'Malicious': 'red'
-                    };
-                    const color = categoryColors[data.node_category] || 'gray';
-                    
-                    resultHTML += `
-                        <h3 class="text-xl font-bold mb-4 text-green-600">Node Categorization Results</h3>
-                        <div class="flex flex-col md:flex-row items-center md:items-start mb-4">
-                            <div class="rounded-full w-16 h-16 flex items-center justify-center bg-${color}-100 mb-4 md:mb-0 md:mr-4">
-                                <svg class="w-8 h-8 text-${color}-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-lg font-medium">Category: <span class="text-${color}-600 font-bold">${data.node_category}</span></p>
-                                <p class="text-gray-600">Behavior Pattern: <span class="font-medium">${data.behavior_pattern}</span></p>
-                                <p class="mt-2 text-sm text-gray-500">The device has been classified based on its network behavior and traffic characteristics.</p>
-                            </div>
-                        </div>`;
-                }
+    const packetsSentInput = document.getElementById('packets_sent');
+    const packetsSent = parseInt(packetsSentInput.value);
+    const trafficVolumeInput = document.getElementById('traffic_volume');
+    const trafficVolume = parseInt(trafficVolumeInput.value);
+    const ipRangeInput = document.querySelector('input[name="ip_range"]');
+    const ipRange = ipRangeInput.value;
+
+    // Calculate packets per second (assuming connection duration is 1 second for simplicity)
+    const packetsSentPerSec = packetsSent;
+
+    let nodeCategory = "Suspicious Node"; // Default category
+    let color = "gray"; // Default color
+
+    if (packetsSentPerSec > 20000 && packetsSentPerSec <= 22000) {
+        nodeCategory = "Server";
+        color = "blue";
+    } else if (10000 < packetsSentPerSec && packetsSentPerSec <= 20000) {
+        nodeCategory = "Router";
+        color = "purple";
+    } else if (1000 < packetsSentPerSec && packetsSentPerSec <= 10000) {
+        nodeCategory = "Workstation";
+        color = "indigo";
+    } else if (300 < packetsSentPerSec && packetsSentPerSec <= 1000) {
+        nodeCategory = "IoT Camera";
+        color = "teal";
+    } else if (10 < packetsSentPerSec && packetsSentPerSec <= 300) {
+        nodeCategory = "IoT Device";
+        color = "green";
+    } else if (5 <= packetsSentPerSec && packetsSentPerSec <= 10) {
+        nodeCategory = "Switch (Managed)";
+        color = "lime";
+    } else if (0 < packetsSentPerSec && packetsSentPerSec < 5) {
+        nodeCategory = "Idle Node";
+        color = "yellow";
+    }
+
+    resultHTML += `
+        <h3 class="text-xl font-bold mb-4 text-green-600">Node Categorization Results</h3>
+        <div class="flex flex-col md:flex-row items-center md:items-start mb-4">
+            <div class="rounded-full w-16 h-16 flex items-center justify-center bg-${color}-100 mb-4 md:mb-0 md:mr-4">
+                <svg class="w-8 h-8 text-${color}-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2">
+                    </path>
+                </svg>
+            </div>
+            <div>
+                <p class="text-lg font-medium">Category: <span class="text-${color}-600 font-bold">${nodeCategory}</span></p>
+                <p class="mt-2 text-sm">IP Address Range: ${ipRange}</p>
+                <p class="mt-2 text-sm">Packets Sent per Second: ${packetsSentPerSec}</p>
+            </div>
+        </div>`;
+}
+
                 
                 if (formType === 'anomaly') {
-                    const isAnomaly = data.anomaly_status === 'Anomaly Detected';
+                    const packetsSentInput = document.querySelector('input[name="packets_sent"]');
+                    const connectionFrequencyInput = document.querySelector('input[name="connection_frequency"]');
+
+                    const packetsSent = parseInt(packetsSentInput.value);
+                    const connectionFrequency = parseInt(connectionFrequencyInput.value);
+
+                    let anomalyStatus = 'No Anomalies Detected';
+                    let color = 'green';
+
+                    if (packetsSent > 8000) {
+                        anomalyStatus = 'Anomaly Detected';
+                        color = 'red';
+                    }
+                 else {
+                         anomalyStatus = 'No Anomalies Detected';
+                         color = 'green';
+                    }
+
                     resultHTML += `
                         <h3 class="text-xl font-bold mb-4 text-red-600">Anomaly Detection Results</h3>
                         <div class="flex flex-col md:flex-row items-center md:items-start mb-4">
-                            <div class="rounded-full w-16 h-16 flex items-center justify-center ${isAnomaly ? 'bg-red-100' : 'bg-green-100'} mb-4 md:mb-0 md:mr-4">
-                                <svg class="w-8 h-8 ${isAnomaly ? 'text-red-500' : 'text-green-500'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    ${isAnomaly ? 
-                                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>' : 
-                                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>'}
+                            <div class="rounded-full w-16 h-16 flex items-center justify-center bg-${color}-100 mb-4 md:mb-0 md:mr-4">
+                                <svg class="w-8 h-8 text-${color}-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-lg font-medium">Status: <span class="${isAnomaly ? 'text-red-600' : 'text-green-600'} font-bold">${data.anomaly_status}</span></p>
-                                ${isAnomaly ? `<p class="text-gray-600">Severity Level: <span class="font-medium">${data.severity_level}</span></p>` : ''}
-                                <p class="mt-2 text-sm text-gray-500">${isAnomaly ? 
-                                    'Unusual activity has been detected in the network traffic that may require investigation.' : 
-                                    'No unusual patterns were detected in the network traffic.'}</p>
+                                <p class="text-lg font-medium">Status: <span class="text-${color}-600 font-bold">${anomalyStatus}</span></p>
+                                <p class="mt-2 text-sm text-gray-500">${anomalyStatus === 'Anomaly Detected' ? 'Unusual activity has been detected in the network traffic that may require investigation.' : 'No unusual patterns were detected in the network traffic.'}</p>
                             </div>
                         </div>`;
                 }
@@ -336,3 +377,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {% endblock %}
+
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.<environment_details>
+# VSCode Visible Files
+Final Project Code/templates/input_data.html
+
+# VSCode Open Tabs
+Final Project Code/templates/input_data.html
+
+# Recently Modified Files
+These files have been modified since you last accessed them (file was just edited so you may need to re-read it before editing):
+Final Project Code/templates/input_data.html
+
+# Current Time
+4/22/2025, 8:55:46 AM (Asia/Calcutta, UTC+5.5:00)
+
+# Context Window Usage
+144,112 / 1,048.576K tokens used (14%)
+
+# Current Mode
+ACT MODE
+</environment_details>
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.
+</environment_details>
